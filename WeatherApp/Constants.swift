@@ -9,6 +9,7 @@ import Foundation
 
 enum API {
     static let baseUrl = "https://api.openweathermap.org/data/2.5/"
+    static let baseImageUrl = "https://openweathermap.org/img/wn/"
 
     static var apiKey: String {
         guard let filepath = Bundle.main.path(forResource: "Debug-keys", ofType: "plist"),

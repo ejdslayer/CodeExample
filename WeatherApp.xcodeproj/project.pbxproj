@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D40E6EF295F280E00683D42 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40E6EE295F280E00683D42 /* UIImage+Extensions.swift */; };
 		3D965C622940F82700BBB429 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D965C612940F82700BBB429 /* LocationViewModel.swift */; };
 		3D965C662940FAA400BBB429 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D965C652940FAA400BBB429 /* LocationView.swift */; };
 		3DB12BB42940DDE50071E59A /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB12BB32940DDE50071E59A /* WeatherApp.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D40E6EE295F280E00683D42 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		3D965C612940F82700BBB429 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		3D965C652940FAA400BBB429 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		3DB12BB02940DDE50071E59A /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D40E6ED295F27F800683D42 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D40E6EE295F280E00683D42 /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		3D965C632940FA8A00BBB429 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 				3DB12BEF2940F1CA0071E59A /* Networking */,
 				3DB12BE52940E3820071E59A /* Views */,
 				3DB12BDE2940E1350071E59A /* Constants.swift */,
+				3D40E6ED295F27F800683D42 /* Extensions */,
 				3DB12BB72940DDE60071E59A /* Assets.xcassets */,
 				73D2D6D129434625002DE263 /* Color.swift */,
 				3DB12BBC2940DDE60071E59A /* WeatherApp.entitlements */,
@@ -359,6 +370,7 @@
 				3DB12BE42940E1D60071E59A /* WeatherViewModel.swift in Sources */,
 				3DB12BB62940DDE50071E59A /* WeatherView.swift in Sources */,
 				73D2D6D229434625002DE263 /* Color.swift in Sources */,
+				3D40E6EF295F280E00683D42 /* UIImage+Extensions.swift in Sources */,
 				3DB12BB42940DDE50071E59A /* WeatherApp.swift in Sources */,
 				3DB12BE22940E1C60071E59A /* WeatherModels.swift in Sources */,
 				3DB12BE82940E4260071E59A /* Endpoints.swift in Sources */,

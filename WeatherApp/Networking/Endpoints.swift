@@ -14,6 +14,7 @@ import CoreLocation
 enum Endpoints {
     case getDaily(location: CLLocation)
     case getWeekly(location: CLLocation)
+    case getIcon(name: String)
 }
 
 // MARK: Available methods
@@ -31,7 +32,8 @@ extension Endpoints {
     var httpMethod: HTTPMethod {
         switch self {
         case .getDaily,
-            .getWeekly:
+                .getWeekly,
+                .getIcon:
             return .get
         }
     }
@@ -43,6 +45,8 @@ extension Endpoints {
             return "weather?lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)&appid=\(API.apiKey)"
         case .getWeekly(let location):
             return "forecast?lat=\(location.coordinate.latitude)&lon=\(location.coordinate.longitude)&appid=\(API.apiKey)"
+        case .getIcon(let name):
+            return "\(name)@2x.png"
         }
     }
 
@@ -50,13 +54,20 @@ extension Endpoints {
     var headers: [String: Any]? {
         switch self {
         case .getDaily,
-            .getWeekly:
+                .getWeekly,
+                .getIcon:
             return ["Content-Type": "application/json"]
         }
     }
 
     // Form the url
-    var url: String {
-        return API.baseUrl + path
+    var url: URL? {
+        switch self {
+        case .getDaily,
+                .getWeekly:
+            return URL(string: API.baseUrl + path)
+        case .getIcon:
+            return URL(string: API.baseImageUrl + path)
+        }
     }
 }

@@ -16,7 +16,7 @@ protocol WeatherServiceProtocol {
 final class WeatherService: WeatherServiceProtocol {
     func getTodaysForecast(location: CLLocation) async throws -> DailyForecast? {
         let endpoint = Endpoints.getDaily(location: location)
-        guard let url = URL(string: endpoint.url) else {
+        guard let url = endpoint.url else {
             throw NetworkErrors.invalidUrl
         }
         let (data, _) = try await URLSession.shared.data(from: url)
@@ -26,7 +26,7 @@ final class WeatherService: WeatherServiceProtocol {
     
     func getWeeklyForecast(location: CLLocation) async throws -> WeeklyForecast? {
         let endpoint = Endpoints.getWeekly(location: location)
-        guard let url = URL(string: endpoint.url) else {
+        guard let url = endpoint.url else {
             throw NetworkErrors.invalidUrl
         }
         let (data, _) = try await URLSession.shared.data(from: url)

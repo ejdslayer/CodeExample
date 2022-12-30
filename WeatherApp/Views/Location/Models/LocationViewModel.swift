@@ -25,6 +25,9 @@ class LocationViewModel: NSObject, LocationViewModelProtocol, CLLocationManagerD
         didSet {
             locationManager?.delegate = self
             locationManager?.requestWhenInUseAuthorization()
+            if locationManager?.authorizationStatus == .authorizedWhenInUse {
+                locationManager?.startUpdatingLocation()
+            }
         }
     }
 

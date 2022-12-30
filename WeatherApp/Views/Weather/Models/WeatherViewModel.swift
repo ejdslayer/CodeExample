@@ -23,9 +23,9 @@ class WeatherViewModel: WeatherViewModelProtocol {
 
     init(service: WeatherService) {
         self.service = service
-        // MARK: Remove this for non-mocked
-        self.dailyForecast = DailyForecast.mock()
-        self.weeklyForecast = WeeklyForecast.mock()
+//        // MARK: Remove this for non-mocked
+//        self.dailyForecast = DailyForecast.mock()
+//        self.weeklyForecast = WeeklyForecast.mock()
     }
 
     func fetchTodaysForecast(location: CLLocation?) async {

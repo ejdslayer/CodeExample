@@ -71,9 +71,25 @@ struct WeatherView: View {
     
     @ViewBuilder func weatherView(weather: Weather, large: Bool = true) -> some View {
         VStack(alignment: .center, spacing: large ? 10 : 4) {
-            Image(systemName: weather.icon)
-                .renderingMode(.template)
-                .foregroundColor(.white)
+            AsyncImage(url: Endpoints.getIcon(name: weather.icon).url) { phase in // 1
+                if let image = phase.image { // 2
+                    // if the image is valid
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                } else if phase.error != nil { // 3
+                    // some kind of error appears
+                    Text("404! \n No image available 😢")
+                        .bold()
+                        .font(.title)
+                        .multilineTextAlignment(.center)
+
+                } else { // 4
+                    // showing progress view as placeholder
+                    ProgressView()
+                        .font(.largeTitle)
+                }
+            }.padding()
             
             Text(weather.main)
                 .font(large ? .title : .system(size: 10, weight: .bold))
